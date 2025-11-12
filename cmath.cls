@@ -13,18 +13,25 @@
 \RequirePackage{lmodern}
 
 % Theorem styles
-\theoremstyle{definition}
+% \newtheoremstyle{break}%
+%   {10pt}{10pt}{\itshape}{}{\bfseries}{.}{\newline}{}
+\newtheoremstyle{break-normal}%
+  {10pt}{10pt}{}{}{\bfseries}{.}{\newline}{}
+\newtheoremstyle{break-remark}%
+  {10pt}{10pt}{}{}{\itshape}{.}{\newline}{}
+
+\theoremstyle{break-normal}
 \newtheorem{definition}{Definicja}
-\newtheorem{proposition}{Własność}
-\newtheorem{theorem}{Twierdzenie}
-\newtheorem{lemma}{Lemat}
-\newtheorem{result}{Wniosek}
 \newtheorem{example}{Przykład}
 \newtheorem{problem}{Zadanie}
-\newenvironment{solution}{%
-  \par\noindent\textit{Rozwiązanie.}\ }{\par}
-\theoremstyle{remark}
-\newtheorem{remark}{Uwaga}
+\newtheorem{theorem}{Twierdzenie}
+\newtheorem{lemma}{Lemat}
+\newtheorem{proposition}{Własność}
+\newtheorem{result}{Wniosek}
+
+\theoremstyle{break-remark}
+\newtheorem*{remark}{Uwaga}
+\newtheorem*{solution}{Rozwiązanie}
 
 % Math shortcuts
 \newcommand{\ol}[1]{\overline{#1}}
@@ -33,3 +40,6 @@
 \newcommand{\Z}{\mathbb{Z}}
 \newcommand{\Q}{\mathbb{Q}}
 \newcommand{\N}{\mathbb{N}}
+
+% Formatting
+\setlength\parindent{0pt}
